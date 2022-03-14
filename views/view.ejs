@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/new.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Note</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <ul>
+        <p><a href="/home">Notify</a></p>
+        <p class="logout"><a href="/"><i class="fas fa-sign-out-alt"></i></a></p>
+        <li class="fonts">
+          <a href="/edit/<%= user.id %>"><i class="fas fa-edit"></i></a>
+        </li>
+        <li>
+          <a href="/delete/<%= user.id %>"><i class="fas fa-trash"></i></a>
+        </li>
+        <li>
+          <button onclick = "printTextArea()" ><i class="fas fa-print"></i></button>
+        </li>
+        <li>
+          <% if(user.fav === "true"){ %>
+            <a  title="Favorites" href="/fav/<%= user.id %>"><i style="color: rgb(255, 0, 0);" class="fas fa-heart"></i> </a>
+            <% } else{ %>  
+            <a  title="Favorites" href="/fav/<%= user.id %>"><i  class="fas fa-heart"></i> </a>
+            <% } %>
+        </li>
+
+        <li>
+          <button id="dwn-btn"><i class="fas fa-download"></i></button>
+        </li>
+
+      </ul>
+    </div>
+    <div class="note-container">
+        
+      <form action="/update" class="update-form" method="post">
+        <textarea disabled required
+          class="title"
+          placeholder="Title"
+          name="title"
+          id="title"
+          cols="30"
+          rows="10"
+        ><%= user.title %></textarea>
+        <textarea disabled required
+          class="note-content"
+          name="content"
+          id="editArea"
+          cols="30"
+          rows="10"
+        ><%= user.content %></textarea>
+        <input hidden type="text" value="<%= user.id %>" name="id">
+      </form>
+    </div>
+    <script src="/js/download.js"></script>
+
+  </body>
+</html>

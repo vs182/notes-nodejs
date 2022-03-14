@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/new.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Note</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <p><a href="/home">Notify</a></p>
+            <p class="logout"><a href="/"><i class="fas fa-sign-out-alt"></i></a></p>
+            <input type="file" id="myFile" hidden/>
+
+            <label for="myFile"><i class="fas fa-folder"></i></label>
+
+            <li><a href="/home"><i class="fas fa-trash"></i></a></li>
+            <li><button onclick="Copy()"><i class="fas fa-copy"></i></button></li>
+            <li><a href="/home"><i class="fas fa-arrow-left"></i></a></li>
+            <div class="profile"><% users.forEach(function(user){%>
+                <% if(user.id == 1){%>
+                <a href="/account"><img src="data:image/png;base64,<%= user.user_profile %>" alt=""></a>
+                <% }%>
+                <% }); %></div>        </ul>
+    </div>
+    <div class="note-container">
+       <form action="/add" method="post">
+        <textarea required class="title" placeholder="Title" name="title" id="" cols="30" rows="10"></textarea>
+        <textarea required class="note-content" name="content" id="myTextArea" cols="30" rows="10"></textarea>
+        <input type="submit" class="submit" value="Add Note">
+       </form>
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

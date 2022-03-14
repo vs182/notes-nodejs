@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <p><a href="/home">Notify</a></p>
+            <p class="logout"><a title="logout" href="/"><i class="fas fa-sign-out-alt"></i></a></p>
+            <li class="active"><a class="active" href="/home">My Notes</a></li>
+            <li><a href="/favorite">Favorites</a></li>
+            <li><a href="/new">Create</a></li>
+
+            <div class="profile"><% users.forEach(function(user){%>
+                <% if(user.id == 1){%>
+                    <a href="/account"><img src="data:image/png;base64,<%= user.user_profile %>" alt=""></a>
+                    <% }%>
+                <% }); %></div>
+        </ul>
+
+    </div>
+    <div class="container">
+        <div class="notes">
+            <div class="items-default">
+                <button><a href="/new"><i class="fa fa-plus fa-5x"></i></a></button>
+            </div>
+
+            <% users.slice(1).forEach(function(user){%>
+            <div class="items">
+                <p class="date">Date: <%= user.date %> <a title="Preview" href="/view/<%= user.id %>"><i class="fas fa-eye"></i></a> <a  title="Edit"href="/edit/<%= user.id %>">
+                    <i class="fas fa-edit"></i></a> <a title="Delete" href="/delete/<%= user.id %>"><i class="fas fa-trash"></i></a>
+
+                    <% if(user.fav === "true"){ %>
+                        <a  title="Favorites" href="/fav/<%= user.id %>"><i style="color: rgb(255, 0, 0);" class="fas fa-heart"></i> </a>
+                        <% } else{ %>  
+                        <a  title="Favorites" href="/fav/<%= user.id %>"><i  class="fas fa-heart"></i> </a>
+                        <% } %>
+
+                 </p> 
+                         
+                <div class="content">
+                    <h3><%= user.title %></h3>
+                    <div id="content"><%= user.content.slice(0,400)%></div>
+                </div>
+            </div>
+            <% }); %>
+
+
+
+        </div>
+        <!-- <div class="quotes">
+            <p>
+                The beginning is the most important part of the work. <br>
+                - Plato
+                </p>
+        </div> -->
+    </div>
+</body>
+</html>

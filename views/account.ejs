@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/account.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+</head>
+<body>
+    <h2 class="title"><a href="/home"><span class="arrow"><i class="fas fa-arrow-left"></i> Notify </span></a></h2>
+    <div class="whole">
+      <div class="img-container">
+      
+        <div class="profile"><% users.forEach(function(user){%>
+          <% if(user.id == 1){%>
+              <a href="/account"><img src="data:image/png;base64,<%= user.user_profile %>" alt=""></a></div>
+  
+        <div class="details">
+          <h2><%= user.user_name %></h2>
+          <h2><%= user.user_email %></h2>
+        </div>
+        <% }%>
+        <% }); %>
+       
+      </div>
+     
+    </div>
+    
+</body>
+</html>

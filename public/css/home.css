@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+}
+body{
+    min-height: 100vh;
+    background: #e6e6e6;
+}
+.nav-bar{
+    height: 60px;
+    width: 100%;
+    background: rgb(240, 240, 240);
+}
+.container{
+    background: #e6e6e6;
+    width: 100%;
+}
+.nav-bar ul li{
+    display: inline-block;
+    padding: 20px;
+    list-style: none;
+    font-size: 16px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+.nav-bar ul{
+    margin: auto;
+    text-align: center;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #000;
+}
+.nav-bar ul .active{
+    background: #000;
+    border-radius: 10px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    color: #fff;
+    height: 50px;
+}
+.nav-bar ul li a .active{
+    color: #fff;
+}
+.nav-bar ul p{
+    text-align: left;
+    position: absolute;
+    margin-left: 40px;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: 600px;
+}
+.nav-bar ul p a{
+    text-decoration: none;
+    color: #000;
+}
+.profile{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    right:0;
+    margin-right: 40px;
+}
+.content{
+  width: 100%;
+  overflow: hidden;
+  }
+.content h3{
+    padding: 20px;
+    line-height: 30px;
+}
+.content div{
+    padding: 20px;
+    line-height: 30px;
+}
+.profile img{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #666;
+    border-radius: 50%;
+    position: relative;
+}
+.items-default{
+    margin: 80px auto 20px auto;
+    height: 500px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.items-default button{
+    background: none;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.items{
+    margin: 80px auto 20px auto;
+    height: 500px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.items .date{
+    padding: 20px;
+    text-align: left;
+    background: rgb(240, 240, 240);
+    border-radius: 15px 15px 0 0;
+}
+
+.notes{
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+}
+.container .quotes p{
+    text-align: center;
+    font-family: 'Sansita Swashed';
+    font-size: 28px;
+    line-height: 50px;
+    color: #999;
+    letter-spacing: 1px;
+    
+}
+.logout{
+    left: 10%;
+}
+.fa{
+    text-align: center;
+    color:#999;
+    transition: 1.2s;
+}
+.items-default:hover .fa{
+    color: rgb(0, 0, 0);
+    transition: 1.2s;
+}
+/* .container .quotes{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+} */
+
+.container .notes .items .date .fas{
+    color: #666;
+    margin-left: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container .notes .items .date .fas:hover{
+    color: rgb(0, 0, 0);
+}
+
+.profile2{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    top:50%;
+    right:50%;
+    margin: 5% auto;
+}
+
+
+.profile2 img{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #666;
+    border-radius: 50%;
+}
+
+.bio{
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+}
